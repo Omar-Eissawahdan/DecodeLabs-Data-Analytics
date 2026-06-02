@@ -1,43 +1,40 @@
-# 🚀 DecodeLabs Data Analytics Internship Portfolio
+Data Analytics Internship Portfolio
+Intern Name: Omar Eissa Ibrahim Wahdan
 
-Welcome to my portfolio for the **DecodeLabs Data Analytics Internship**. This repository documents my journey and the technical projects I completed to transform raw data into actionable business insights using Microsoft Excel.
+Track: Data Analytics Internship @ DecodeLabs
 
----
+This document serves as the comprehensive portfolio detailing the technical workflows, methodologies, and business insights extracted over the first two weeks. It showcases the transition from structural data sanitization to programmatic exploratory data analysis.
 
-## 🛠️ Project 1: Data Cleaning & Preparation
-**Objective:** To sanitize a raw, messy retail dataset, ensuring data accuracy and consistency before any analysis.
+🔴 Week 1: Project 1 - Data Cleaning & Preprocessing
+Tech Stack: Microsoft Excel | Data Sanitization | Structural Formatting
 
-**Key Actions Taken:**
-- **Handling Missing Data:** Identified and imputed/removed null values appropriately.
-- **Deduplication:** Removed duplicate records to prevent skewed metrics.
-- **Standardization:** Fixed inconsistent text formatting, trimmed extra spaces, and standardized date formats.
-- **Data Integrity:** Ensured all numerical columns (Price, Quantity) were properly formatted for mathematical operations.
+The foundational phase focused on transforming raw, unstructured data into a reliable, analytical-ready dataset.
 
----
+1. Objective & Scope: To audit, clean, and standardize a messy sales dataset, removing inconsistencies and establishing a robust "single source of truth" for downstream analytical processes.
 
-## 📊 Project 2: Exploratory Data Analysis (EDA) & Dashboarding
-**Objective:** To perform EDA on the cleaned dataset, uncover hidden sales trends, analyze customer behavior, and build an interactive Excel dashboard.
+2. Execution Methodology: * Deduplication: Scanned and removed redundant row entries to ensure transaction volumes and revenue metrics remain accurate.
 
-**Key Insights & Findings:**
-1. **Sales Trend Decline:** Discovered a noticeable decline in total sales over the tracked period (2023 - 2025), signaling a need for strategic business intervention.
-2. **Top Performing Products:** **Printers** and **Chairs** emerged as the highest-selling products by volume, indicating strong demand for core office equipment.
-3. **Payment Distribution:** Customer payment preferences are highly balanced across Cash, Credit Card, Gift Card, and Online Transfers, reflecting a versatile transaction ecosystem.
-4. **Price vs. Quantity Correlation:** Calculated a Pearson correlation coefficient of **~0.028**, indicating **no significant relationship** between Unit Price and Quantity.
-5. **Outlier Detection:** Utilized Box & Whisker plots to identify high-value anomalies in total sales and quantities, likely representing B2B bulk orders.
+Missing Value Imputation: Addressed null values logically. Categorical gaps were treated, and numerical gaps were filled without skewing the variance.
 
-**Interactive Dashboard Features:**
-- Dynamic **Pivot Charts** (Pie, Line, Column).
-- Connected **Slicers** for real-time filtering by Product and Payment Method.
+Type Casting & Formatting: Standardized temporal fields (Dates) and financial fields (Currency) into consistent formats, rectifying alignment issues.
 
----
+Integrity Validation: Conducted a final cross-reference check to ensure no anomalies persisted across the UnitPrice, Quantity, and TotalPrice columns.
 
-## 📂 Repository Contents
-- `Cleaned_Dataset.xlsx`: The final sanitized dataset with the interactive dashboard and visualizations.
-- `Executive_Summary.pdf`: A comprehensive executive report detailing methodology, findings, and actionable recommendations.
-- `Dashboard_Screenshot.png`: A visual snapshot of the interactive Excel dashboard.
+🔴 Week 2: Project 2 - Exploratory Data Analysis (EDA)
+Tech Stack: Python | Pandas | Matplotlib | Seaborn
 
----
+Building upon the sanitized dataset from Week 1, the objective shifted toward algorithmic data discovery. This phase utilized Python's analytical libraries to programmatically uncover underlying patterns, correlations, and outliers.
 
-## 👨‍💻 Author
-**Omar Eissa Ibrahim Wahdan**  
-Data Analyst
+1. Statistical Summary & Central Tendencies: Utilizing Pandas' describe() framework, numerical matrices were profiled to calculate foundational metrics (Mean, Median, Standard Deviation). This provided an immediate mathematical baseline of the dataset's geometry.
+
+2. Unmasking Outliers (Anomaly Detection): A Boxplot visualization was generated using Seaborn to map the variability of the TotalPrice feature.
+
+Finding: The plot isolated significant points beyond the upper whisker. In a business context, these are "signals" representing high-value VIP customer purchases or bulk B2B transactions, not entry errors.
+
+3. Correlation Analysis: A Pearson Correlation Coefficient was calculated to investigate the relationship between product cost and consumer purchasing volume.
+
+Coefficient Result: r ≈ 0.028
+
+Analytical Insight: The result indicates near-zero linear correlation. Customers purchase the quantities they require irrespective of the unit price variance. Visually confirmed via a Scatter Plot.
+
+4. Categorical Performance & Business Recommendations: Through GroupBy aggregation on the Product axis, a Bar Chart was constructed to rank inventory demand. The visual evidence clearly identified top-performing categories (e.g., Printers and Chairs), providing a direct compass for inventory forecasting.
